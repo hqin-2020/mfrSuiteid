@@ -43,7 +43,7 @@ do
 #SBATCH --job-name=run
 #SBATCH --output=./job-outs/$domain_folder/$model_folder/run.out
 #SBATCH --error=./job-outs/$domain_folder/$model_folder/run.err
-#SBATCH --time=0-10:00:00
+#SBATCH --time=0-4:00:00
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=28
@@ -51,7 +51,7 @@ do
 
 module load python/anaconda-2021.05
 
-python3 /project/lhansen/mfrSuite_Ela_midway3/SolvedModels/run_mfrSuite.py --chiUnderline ${chiUnderline} --a_e ${a_e} --a_h ${a_h} --gamma_e ${gamma_e} --gamma_h ${gamma_h} --psi_e ${psi_e} --psi_h ${psi_h} \
+python3 /project/lhansen/mfrSuiteid/SolvedModels/run_mfrSuite.py --chiUnderline ${chiUnderline} --a_e ${a_e} --a_h ${a_h} --gamma_e ${gamma_e} --gamma_h ${gamma_h} --psi_e ${psi_e} --psi_h ${psi_h} \
                                                     --nV ${nV} --nVtilde ${nVtilde} --V_bar ${V_bar} --Vtilde_bar ${Vtilde_bar} --sigma_V_norm ${sigma_V_norm} --sigma_Vtilde_norm ${sigma_Vtilde_norm} \
 
 EOF
