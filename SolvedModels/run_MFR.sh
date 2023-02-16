@@ -18,28 +18,13 @@ elif (( $(echo "$sigma_V_norm == 0.0" |bc -l) )); then
 fi
 
 
-for chiUnderline in 0.5
-do
-    for a_e in 0.14
-    do
-        for a_h in -1
-        do
-            for gamma_e in 4.0
-            do
-                for gamma_h in 6.0 8.0
-                do
-                    for psi_e in 1.0
-                    do
-                        for psi_h in 1.0
-                        do
-
 # for chiUnderline in 0.5
 # do
-#     for a_e in 0.15
+#     for a_e in 0.14
 #     do
-#         for a_h in -1 0.05 0.10 0.13
+#         for a_h in -1
 #         do
-#             for gamma_e in 2.0 3.0 4.0
+#             for gamma_e in 4.0
 #             do
 #                 for gamma_h in 6.0 8.0
 #                 do
@@ -47,6 +32,21 @@ do
 #                     do
 #                         for psi_h in 1.0
 #                         do
+
+for chiUnderline in 0.5
+do
+    for a_e in 0.15
+    do
+        for a_h in -1 0.05 0.10 0.13
+        do
+            for gamma_e in 2.0 3.0 4.0
+            do
+                for gamma_h in 6.0 8.0
+                do
+                    for psi_e in 1.0
+                    do
+                        for psi_h in 1.0
+                        do
                             model_folder=chiUnderline_${chiUnderline}_a_e_${a_e}_a_h_${a_h}_gamma_e_${gamma_e}_gamma_h_${gamma_h}_psi_e_${psi_e}_psi_h_${psi_h}
                             mkdir -p ./job-outs/$domain_folder/$model_folder
                             mkdir -p ./bash/$domain_folder/$model_folder
