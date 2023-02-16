@@ -159,16 +159,16 @@ sigmaShfn = lambda x: np.transpose([vol(x) for vol in sigmaSh])
 sigmaNefn = lambda x: np.transpose([vol(x) for vol in sigmaNe])
 sigmaNhfn = lambda x: np.transpose([vol(x) for vol in sigmaNh])
 
-modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCe, 'sigmaG':sigmaCefn, 'muS':muSe, 'sigmaS':sigmaSefn, 'dt':dt, 'T' :T}
+modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCe, 'sigmaC':sigmaCefn, 'muS':muSe, 'sigmaS':sigmaSefn, 'dt':dt, 'T' :T}
 expoElasExpertsC, priceElasExpertsC, _, _, costElasExpertsC, phit1ExpertsC, phit2ExpertsC = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
-modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCe, 'sigmaG':sigmaCefn, 'muS':muNe, 'sigmaS':sigmaNefn, 'dt':dt, 'T':T}
+modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCe, 'sigmaC':sigmaCefn, 'muS':muNe, 'sigmaS':sigmaNefn, 'dt':dt, 'T':T}
 expoElasExpertsN, priceElasExpertsN, _, _, costElasExpertsN, phit1ExpertsN, phit2ExpertsN = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
-modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCh, 'sigmaG':sigmaChfn, 'muS':muSh, 'sigmaS':sigmaShfn, 'dt':dt, 'T':T}
+modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCh, 'sigmaC':sigmaChfn, 'muS':muSh, 'sigmaS':sigmaShfn, 'dt':dt, 'T':T}
 expoElasHouseholdsC, priceElasHouseholdsC, _, _, costElasHouseholdsC, phit1HouseholdsC, phit2HouseholdsC = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
-modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCh, 'sigmaG':sigmaChfn, 'muS':muNh, 'sigmaS':sigmaNhfn, 'dt':dt, 'T':T}
+modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCh, 'sigmaC':sigmaChfn, 'muS':muNh, 'sigmaS':sigmaNhfn, 'dt':dt, 'T':T}
 expoElasHouseholdsN, priceElasHouseholdsN, _, _, costElassHouseholdsN, phit1HouseholdsN, phit2HouseholdsN = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
 elasol = {'expoElasExpertsC':expoElasExpertsC,
